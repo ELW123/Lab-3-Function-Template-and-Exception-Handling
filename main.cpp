@@ -47,6 +47,7 @@ void selection_sort(vector<T> &vals) {
     T temp;
     int size = vals.size();
 
+    // I do not know why the function does not work if I directly put in vals.size() in the for loop instead of replacing it with int size
     for (int i = 0; i < size; i++) {
         minIndex = min_index(vals, i);
         temp = vals[minIndex];
@@ -69,7 +70,14 @@ vector<char> createVector(){
 
 template <typename T>
 T getElement(vector<T> vals, int index) {
-
+    T element;   
+    try {
+       element = vals.at(index);
+       return element;
+    } catch(const std::out_of_range& e) {
+        cout << "out of range exception occured ";
+    }
+    
     return 0;
 }
 
