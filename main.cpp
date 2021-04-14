@@ -74,11 +74,12 @@ T getElement(vector<T> vals, int index) {
     try {
        element = vals.at(index);
        return element;
-    } catch(const std::out_of_range& e) {
-        cout << "out of range exception occured ";
+    } catch(const std::out_of_range& excpt) {
+        cout << "out of range exception occured" << endl;
     }
-    
-    return 0;
+
+    // something is wrong if the function returns -1
+    return -1;
 }
 
 int main(){
