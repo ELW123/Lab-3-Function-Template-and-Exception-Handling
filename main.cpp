@@ -94,8 +94,8 @@ int main(){
                     throw runtime_error("Selection sort is wrong");       
             }
         
-        } catch(const std::out_of_range& excpt) {
-            cout << "out of range exception occured ";
+        } catch(runtime_error &excpt) {
+            cout << "selection sort error";
         }
     }
     return 0;
