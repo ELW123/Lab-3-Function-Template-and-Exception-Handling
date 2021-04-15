@@ -70,12 +70,14 @@ int main(){
      vector<char> vals = createVector();
      char curChar;
      int index;
+     int size = vals.size();
      int numOfRuns = 10;
      while(--numOfRuns >= 0){
         try {
             cout << "Enter a number: " << endl;
             cin >> index;
-            if (index < 0 || index >= vals.size())
+            
+            if (index < 0 || index >= size)
                 throw runtime_error("Invalid index");
                 
             curChar = getElement(vals,index);
