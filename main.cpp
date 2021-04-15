@@ -75,7 +75,7 @@ int main(){
         try {
             cout << "Enter a number: " << endl;
             cin >> index;
-            if (index < 0 || index > vals.size())
+            if (index < 0 || index >= vals.size())
                 throw runtime_error("Invalid index");
                 
             curChar = getElement(vals,index);
