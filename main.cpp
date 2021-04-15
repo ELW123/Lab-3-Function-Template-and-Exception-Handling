@@ -77,7 +77,7 @@ int main(){
             cin >> index;
             curChar = getElement(vals,index);
             cout << "Element located at " << index << ": is " << curChar << endl;
-        } catch(const std::out_of_range& e) {
+        } catch(const std::out_of_range& excpt) {
             cout << "out of range exception occured ";
         }
     }
