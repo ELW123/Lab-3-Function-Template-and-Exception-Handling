@@ -58,20 +58,13 @@ vector<char> createVector(){
 
 template <typename T>
 T getElement(vector<T> vals, int index) {   
-    try {
-        T element;
-        element = vals.at(index);
-        return element;
-    } catch(const std::out_of_range& excpt) {
-        cout << "out of range exception occured" << endl;
-    }
-
-    // something is wrong if the function returns -1
-    return -1;
+    T element;
+    element = vals.at(index);
+    
+    return element;
 }
 
 int main(){
-
     //Part B
      srand(time(0));
      vector<char> vals = createVector();
@@ -79,10 +72,15 @@ int main(){
      int index;
      int numOfRuns = 10;
      while(--numOfRuns >= 0){
-         cout << "Enter a number: " << endl;
-         cin >> index;
-         curChar = getElement(vals,index);
-         cout << "Element located at " << index << ": is " << curChar << endl;
+        try {
+            cout << "Enter a number: " << endl;
+            cin >> index;
+            curChar = getElement(vals,index);
+            cout << "Element located at " << index << ": is " << curChar << endl;
+        } catch(const std::out_of_range& e) {
+            cout << "out of range exception occured ";
+        }
     }
     return 0;
+
 }
