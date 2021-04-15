@@ -1,3 +1,10 @@
+/* 	Collaborated with: 
+	Ethan Wan,  
+	Mariam Golwalla,  
+	zybooks.com - CS 10C, 
+	github.com to host our code
+*/
+
 #include <vector>
 #include <stdexcept>
 #include <cstdlib>
@@ -14,24 +21,6 @@ unsigned min_index(const vector<T> &vals, unsigned index) {
     int size = vals.size();
 
     for (int i = index; i < size; i++) {
-        
-        /* String implementation is still buggy
-        // first check if T is a string
-        if (typeid(T) == typeid(std::string)) {
-            // compares the lengths of strings - should double check later!
-            if (vals[i].length() < value.length()) {
-                value = vals[i];
-                minIndex = i;    
-            }   
-        }
-        
-        // if T is not a string
-        else if(vals[i] < value) {
-            value = vals[i];
-            minIndex = i;
-        } */
-        
-        // This code passed the zybooks test for strings?????
         if(vals[i] < value) {
             value = vals[i];
             minIndex = i;
@@ -46,8 +35,7 @@ void selection_sort(vector<T> &vals) {
     int minIndex;
     T temp;
     int size = vals.size();
-
-    // I do not know why the function does not work if I directly put in vals.size() in the for loop instead of replacing it with int size
+    
     for (int i = 0; i < size; i++) {
         minIndex = min_index(vals, i);
         temp = vals[minIndex];
