@@ -1,16 +1,16 @@
-/* 	Collaborated with: 
-	Ethan Wan,  
-	Mariam Golwalla,  
-	zybooks.com - CS 10C, 
-	github.com to host our code
-*/
+/**
+ * Collaborated with: 
+ * Ethan Wan,  
+ * Mariam Golwalla,  
+ * zybooks.com - CS 10C, 
+ * github.com to host our code
+**/
 
 #include <vector>
 #include <stdexcept>
 #include <cstdlib>
 #include <iostream>
 #include <time.h>
-#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -57,11 +57,11 @@ vector<char> createVector(){
 }
 
 template <typename T>
-T getElement(vector<T> vals, int index) {
-    T element;   
+T getElement(vector<T> vals, int index) {   
     try {
-       element = vals.at(index);
-       return element;
+        T element;
+        element = vals.at(index);
+        return element;
     } catch(const std::out_of_range& excpt) {
         cout << "out of range exception occured" << endl;
     }
