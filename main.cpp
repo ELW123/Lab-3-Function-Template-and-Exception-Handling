@@ -75,8 +75,12 @@ int main(){
         try {
             cout << "Enter a number: " << endl;
             cin >> index;
+            if (index < 0 || index > vals.size())
+                throw runtime_error("Invalid index");
+                
             curChar = getElement(vals,index);
             cout << "Element located at " << index << ": is " << curChar << endl;
+
         } catch(const std::out_of_range& excpt) {
             cout << "out of range exception occured ";
         }
