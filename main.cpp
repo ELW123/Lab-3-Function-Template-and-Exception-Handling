@@ -78,11 +78,22 @@ int main(){
             cin >> index;
             
             if (index < 0 || index >= size)
-                throw runtime_error("Invalid index");
+                throw out_of_range("Invalid index");
                 
             curChar = getElement(vals,index);
             cout << "Element located at " << index << ": is " << curChar << endl;
 
+        } catch(const std::out_of_range& excpt) {
+            cout << "out of range exception occured ";
+        }
+
+        try {
+            for (int i = 0; i < size - 1; i++) {
+                cout << vals.at(i);
+                if (vals.at(i) < vals.at(i + 1))
+                    throw runtime_error("Selection sort is wrong");       
+            }
+        
         } catch(const std::out_of_range& excpt) {
             cout << "out of range exception occured ";
         }
