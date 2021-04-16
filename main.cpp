@@ -65,6 +65,7 @@ T getElement(vector<T> vals, int index) {
     return element;
 }
 
+// helper function for part a
 template <typename T>
 void displayVector(const vector<T> &vals, int size) {
     for (int i = 0; i < size; i++) {
@@ -74,6 +75,7 @@ void displayVector(const vector<T> &vals, int size) {
     cout << endl << endl;
 }
 
+// test harness for part a
 void createTestVector() {
 	string userInput;
     int intValue;
