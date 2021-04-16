@@ -100,6 +100,7 @@ void createTestVector() {
         return;
     }
     
+    try {
 	if (userInput == "i") {
         vector<int> valsInt;
 
@@ -120,6 +121,12 @@ void createTestVector() {
         displayVector(valsInt, size);
 
         selection_sort(valsInt);
+
+        // tests selection_sort
+        for (i = 0; i < size - 1; i++) {
+            if (valsInt.at(i) > valsInt.at(i+1))
+                throw runtime_error("ERROR: selection_sort does not work for int");
+        }
 
         cout << "Here is your int vector sorted:" << endl;
         displayVector(valsInt, size);
@@ -146,6 +153,12 @@ void createTestVector() {
 
         selection_sort(valsChar);
 
+        // tests selection_sort
+        for (i = 0; i < size - 1; i++) {
+            if (valsChar.at(i) > valsChar.at(i+1))
+                throw runtime_error("ERROR: selection_sort does not work for char");
+        }
+
         cout << "Here is your char vector sorted:" << endl;
         displayVector(valsChar, size);
 	}
@@ -168,6 +181,12 @@ void createTestVector() {
         displayVector(valsString, size);
 
         selection_sort(valsString);
+
+        // tests selection_sort
+        for (i = 0; i < size - 1; i++) {
+            if (valsString.at(i) > valsString.at(i+1))
+                throw runtime_error("ERROR: selection_sort does not work for string");
+        }
 
         cout << "Here is your string vector sorted:" << endl;
         displayVector(valsString, size);
@@ -194,9 +213,18 @@ void createTestVector() {
 
         selection_sort(valsDouble);
 
+        // tests selection_sort
+        for (i = 0; i < size - 1; i++) {
+            if (valsDouble.at(i) > valsDouble.at(i+1))
+                throw runtime_error("ERROR: selection_sort does not work for doubles");
+        }
+
         cout << "Here is your doubles vector sorted:" << endl;
         displayVector(valsDouble, size);
 	}
+    } catch (runtime_error & excpt) {
+        cout << excpt.what() << endl;
+    }
 }
 
 int main(){
