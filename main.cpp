@@ -193,7 +193,7 @@ void createTestVector() {
 	}
 
     if (userInput == "d") {
-        vector<char> valsDouble;
+        vector<double> valsDouble;
 
         cin.clear();
         cout << "Enter the desired number of values for the doubles vector" << endl;
